@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Learning Pathway</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #F5F5F5; color: #1A1A1A; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #F5F5F5;
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-rows: 140px 1fr;
+        }
+
+        /* Grid Lines */
+        .grid-line { position: absolute; background-color: rgba(0, 0, 0, 0.05); z-index: 0; }
+        .grid-v-1 { width: 1px; height: 100%; left: 33.33%; top: 0; }
+        .grid-v-2 { width: 1px; height: 100%; left: 66.66%; top: 0; }
+        .grid-h-1 { height: 1px; width: 100%; top: 140px; left: 0; }
+
+        /* Header */
+        .header {
+            padding: 40px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: #1A1A1A;
+            letter-spacing: -2px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            font-weight: 400;
+        }
+
+        /* Main Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .column {
+            padding: 40px 40px 40px 60px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .col-header {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0052CC;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Phase List */
+        .phase-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .phase-item {
+            display: flex;
+            flex-direction: column;
+            border-left: 2px solid #ddd;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .phase-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            background-color: #1A1A1A;
+        }
+
+        .phase-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .phase-desc {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* Tech Stack Blocks */
+        .stack-group {
+            margin-bottom: 32px;
+        }
+
+        .stack-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1A1A1A;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 4px;
+        }
+
+        .stack-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-tag {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 6px 12px;
+            font-size: 13px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        /* Deployment & Image */
+        .image-wrapper {
+            width: 100%;
+            height: 240px;
+            background-color: white;
+            border: 1px solid rgba(0,0,0,0.1);
+            margin-bottom: 32px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .workflow-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .deploy-list {
+            list-style: none;
+        }
+
+        .deploy-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .deploy-item i {
+            color: #0052CC;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Grid Lines -->
+        <div class="grid-line grid-v-1"></div>
+        <div class="grid-line grid-v-2"></div>
+        <div class="grid-line grid-h-1"></div>
+
+        <!-- Header -->
+        <div class="header">
+            <h1>Complete Learning Pathway</h1>
+            <div class="subtitle">From Beginner to Senior Engineer: A Structured Progression System</div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content-grid">
+            <!-- Column 1: Mastery Phases -->
+            <div class="column">
+                <div class="col-header">
+                    <i class="fas fa-layer-group"></i> Phase Mastery
+                </div>
+                <div class="phase-list">
+                    <div class="phase-item">
+                        <div class="phase-title">Foundation</div>
+                        <div class="phase-desc">Core programming principles, algorithms, and basic development tools.</div>
+                    </div>
+                    <div class="phase-item">
+                        <div class="phase-title">Intermediate</div>
+                        <div class="phase-desc">Framework mastery, component design, and database integration.</div>
+                    </div>
+                    <div class="phase-item">
+                        <div class="phase-title">Advanced</div>
+                        <div class="phase-desc">System architecture, scalability, performance optimization, and security.</div>
+                    </div>
+                    <div class="phase-item">
+                        <div class="phase-title">Expert</div>
+                        <div class="phase-desc">Leadership, mentorship, innovation, and complex system orchestration.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 2: Tech Stack -->
+            <div class="column" style="padding-left: 40px;">
+                <div class="col-header">
+                    <i class="fas fa-code"></i> Tech Stack
+                </div>
+                
+                <div class="stack-group">
+                    <div class="stack-label">Frontend Core</div>
+                    <div class="stack-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                        <span class="tech-tag">DaisyUI</span>
+                    </div>
+                </div>
+
+                <div class="stack-group">
+                    <div class="stack-label">Backend & API</div>
+                    <div class="stack-tags">
+                        <span class="tech-tag">FastAPI (Python)</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">REST APIs</span>
+                    </div>
+                </div>
+
+                <div class="stack-group">
+                    <div class="stack-label">Specialized & Tools</div>
+                    <div class="stack-tags">
+                        <span class="tech-tag">Three.js</span>
+                        <span class="tech-tag">Biome</span>
+                        <span class="tech-tag">Strict Mode</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 3: Deployment -->
+            <div class="column" style="padding-left: 40px;">
+                <div class="col-header">
+                    <i class="fas fa-rocket"></i> Deployment
+                </div>
+
+                <div class="image-wrapper">
+                    <img src="/home/ubuntu/upload/search_images/zP2UCUpzShfM.png" alt="Modern Web Development Workflow" class="workflow-img">
+                </div>
+
+                <ul class="deploy-list">
+                    <li class="deploy-item">
+                        <i class="fas fa-code-branch"></i>
+                        <span><strong>Version Control:</strong> Git & GitHub flow</span>
+                    </li>
+                    <li class="deploy-item">
+                        <i class="fas fa-sync"></i>
+                        <span><strong>CI/CD:</strong> Automated pipelines</span>
+                    </li>
+                    <li class="deploy-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span><strong>Observability:</strong> Monitoring & Logs</span>
+                    </li>
+                    <li class="deploy-item">
+                        <i class="fas fa-server"></i>
+                        <span><strong>Production:</strong> Scalable strategies</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

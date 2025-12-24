@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Complete AI-Powered Developer Handbook</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #F5F5F5; color: #1A1A1A; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #F5F5F5;
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+        }
+        
+        /* Decorative Grid Lines */
+        .grid-line { position: absolute; background-color: rgba(0, 0, 0, 0.05); z-index: 0; }
+        .grid-v-1 { width: 1px; height: 100%; left: 80px; top: 0; }
+        .grid-v-2 { width: 1px; height: 100%; left: 50%; top: 0; }
+        .grid-h-1 { height: 1px; width: 100%; top: 80px; left: 0; }
+        .grid-h-2 { height: 1px; width: 100%; bottom: 80px; left: 0; }
+
+        /* Left Content Area */
+        .content-left {
+            padding: 120px 40px 24px 60px; /* reduced bottom/right padding to save height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 1;
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #0052CC;
+            color: white;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px; /* tightened spacing */
+            width: fit-content;
+        }
+
+        h1 {
+            font-size: 64px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+            color: #1A1A1A;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            font-weight: 300;
+            color: #333333;
+            margin-bottom: 32px; /* reduced to save height */
+            line-height: 1.4;
+            max-width: 90%;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 24px; /* reduced gap */
+            font-size: 14px;
+            color: #666;
+            font-weight: 500;
+            border-top: 1px solid #ddd;
+            padding-top: 12px; /* reduced padding */
+        }
+
+        .meta-item { display: flex; align-items: center; gap: 10px; }
+        .meta-item i { color: #FF4D4D; }
+
+        /* Right Image Area */
+        .image-right {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px; /* reduced padding to lower height */
+            background-color: #E5E5E5;
+        }
+
+        .dashboard-frame {
+            width: 100%;
+            height: auto;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            border: 1px solid rgba(0,0,0,0.1);
+            background: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .dashboard-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        /* Accent Elements */
+        .accent-square { position: absolute; width: 120px; height: 120px; background-color: #FF4D4D; bottom: 0; right: 0; z-index: 1; }
+        .tech-pattern { position: absolute; top: 40px; right: 40px; width: 200px; height: 200px; background-image: radial-gradient(#0052CC 1px, transparent 1px); background-size: 20px 20px; opacity: 0.2; }
+
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Grid Lines -->
+        <div class="grid-line grid-v-1"></div>
+        <div class="grid-line grid-v-2"></div>
+        <div class="grid-line grid-h-1"></div>
+        <div class="grid-line grid-h-2"></div>
+
+        <!-- Left Content -->
+        <div class="content-left">
+            <div class="tag">Interactive Command Center</div>
+            <h1>The Complete<br>AI-Powered<br>Developer Handbook</h1>
+            <p class="subtitle">From Zero to Senior Engineer with AI Assistance.<br>Your comprehensive guide to modern software development.</p>
+            
+            <div class="meta-info">
+                <div class="meta-item">
+                    <i class="fas fa-layer-group"></i>
+                    <span>4 Core Frameworks</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-rocket"></i>
+                    <span>Career Acceleration</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-code"></i>
+                    <span>Full-Stack Mastery</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Image -->
+        <div class="image-right">
+            <div class="tech-pattern"></div>
+            <div class="dashboard-frame">
+                <img src="/home/ubuntu/upload/search_images/7AoX4cPmWRhx.png" alt="AI Dashboard" class="dashboard-img">
+            </div>
+            <div class="accent-square"></div>
+        </div>
+    </div>
+</body>
+</html>

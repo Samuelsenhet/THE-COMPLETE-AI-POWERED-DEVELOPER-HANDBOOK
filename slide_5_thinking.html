@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Thinking Framework</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #F5F5F5; color: #1A1A1A; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px; /* keep as required */
+            background-color: #F5F5F5;
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 60% 40%;
+        }
+
+        /* Grid Lines */
+        .grid-line { position: absolute; background-color: rgba(0, 0, 0, 0.05); z-index: 0; }
+        .grid-v-1 { width: 1px; height: 100%; left: 60%; top: 0; }
+        .grid-h-1 { height: 1px; width: 100%; top: 140px; left: 0; }
+
+        /* Left Content */
+        .content-left {
+            padding: 60px 60px 20px 80px; /* reduced bottom padding */
+            display: flex;
+            flex-direction: column;
+            z-index: 1;
+        }
+
+        .header-section {
+            margin-bottom: 20px; /* tightened spacing */
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: #1A1A1A;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 400;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Levels List */
+        .levels-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px; /* reduced gap between levels */
+            margin-bottom: 20px; /* reduced bottom gap */
+        }
+
+        .level-item {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 12px; /* reduced inner gap */
+            align-items: flex-start;
+        }
+
+        .level-num {
+            font-size: 32px;
+            font-weight: 800;
+            color: #0052CC;
+            line-height: 1;
+        }
+
+        .level-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin-bottom: 6px;
+        }
+
+        .level-content p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .level-tag {
+            font-size: 12px;
+            font-weight: 600;
+            color: #FF4D4D;
+            text-transform: uppercase;
+            margin-left: 10px;
+            display: inline-block;
+        }
+
+        /* Prompt Box */
+        .prompt-box {
+            margin-top: auto;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 12px; /* reduced padding */
+            border-left: 4px solid #1A1A1A;
+        }
+
+        .prompt-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .prompt-text {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        /* Right Content */
+        .content-right {
+            background-color: #E5E5E5;
+            padding: 40px 40px; /* reduced vertical padding to keep columns balanced */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .image-frame {
+            background: white;
+            padding: 12px; /* reduced inner padding */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .main-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .accent-shape {
+            position: absolute;
+            width: 160px; /* slightly smaller */
+            height: 160px;
+            background-color: #0052CC;
+            top: 40px; /* moved up a bit */
+            right: 20px;
+            z-index: 1;
+            opacity: 0.1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Grid Lines -->
+        <div class="grid-line grid-v-1"></div>
+        <div class="grid-line grid-h-1"></div>
+
+        <!-- Left Content -->
+        <div class="content-left">
+            <div class="header-section">
+                <h1>The Thinking Framework</h1>
+                <h2>Four Levels of Problem Solving</h2>
+            </div>
+
+            <div class="levels-list">
+                <!-- Level 1 -->
+                <div class="level-item">
+                    <div class="level-num">01</div>
+                    <div class="level-content">
+                        <h3>Logical <span class="level-tag">What is?</span></h3>
+                        <p>Define the problem space, understand core requirements, and identify stakeholders.</p>
+                    </div>
+                </div>
+
+                <!-- Level 2 -->
+                <div class="level-item">
+                    <div class="level-num">02</div>
+                    <div class="level-content">
+                        <h3>Analytical <span class="level-tag">How do I?</span></h3>
+                        <p>Break down components, identify dependencies, and map technical resources.</p>
+                    </div>
+                </div>
+
+                <!-- Level 3 -->
+                <div class="level-item">
+                    <div class="level-num">03</div>
+                    <div class="level-content">
+                        <h3>Computational <span class="level-tag">How to fit logic?</span></h3>
+                        <p>Structure solution architecture, design system interactions, and plan data flows.</p>
+                    </div>
+                </div>
+
+                <!-- Level 4 -->
+                <div class="level-item">
+                    <div class="level-num">04</div>
+                    <div class="level-content">
+                        <h3>Procedural <span class="level-tag">How do I excel?</span></h3>
+                        <p>Optimize implementation, refine code quality, and apply best practices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prompt-box">
+                <div class="prompt-label">Example Prompt</div>
+                <div class="prompt-text">"Help me think through my social media analytics dashboard using all 4 levels"</div>
+            </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="content-right">
+            <div class="accent-shape"></div>
+            <div class="image-frame">
+                <img src="/home/ubuntu/upload/search_images/BR6TSJKoQBT6.png" alt="Software Engineering Landscape" class="main-image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

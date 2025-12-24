@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Start Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #F5F5F5; color: #1A1A1A; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #F5F5F5;
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 35% 65%;
+        }
+
+        /* Grid Lines */
+        .grid-line { position: absolute; background-color: rgba(0, 0, 0, 0.05); z-index: 0; }
+        .grid-v-1 { width: 1px; height: 100%; left: 35%; top: 0; }
+        .grid-h-1 { height: 1px; width: 100%; top: 120px; left: 0; }
+
+        /* Left Content */
+        .content-left {
+            padding: 60px 40px 60px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 1;
+            background-color: #1A1A1A;
+            color: white;
+        }
+
+        h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px; /* reduced */
+            letter-spacing: -2px;
+            color: white;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            color: #aaa;
+            line-height: 1.5;
+            margin-bottom: 30px; /* reduced */
+        }
+
+        .action-box {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 24px; /* reduced */
+        }
+
+        .action-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #0052CC;
+            margin-bottom: 10px; /* reduced */
+            font-weight: 700;
+        }
+
+        .action-text {
+            font-size: 16px;
+            color: #ddd;
+            line-height: 1.4;
+        }
+
+        /* Right Content */
+        .content-right {
+            padding: 40px 60px; /* reduced vertical padding */
+            display: flex;
+            flex-direction: column;
+            z-index: 1;
+        }
+
+        .section-header {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin-bottom: 24px; /* reduced */
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .command-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px; /* reduced gap */
+            height: 100%;
+        }
+
+        .command-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px; /* reduced padding */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px; /* reduced */
+            border-bottom: 2px solid #0052CC;
+            padding-bottom: 8px; /* reduced */
+        }
+
+        .card-icon { color: #0052CC; font-size: 16px; }
+        
+        .card-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #1A1A1A;
+        }
+
+        .cmd-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px; /* reduced gap */
+        }
+
+        .cmd-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px; /* reduced gap */
+        }
+
+        .cmd-trigger {
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            background-color: #F5F5F5;
+            padding: 6px 10px; /* reduced padding */
+            border-left: 3px solid #1A1A1A;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .cmd-desc {
+            font-size: 12px;
+            color: #666;
+            margin-left: 4px;
+        }
+
+        /* Accent variations */
+        .command-card:nth-child(2) .card-header { border-color: #FF4D4D; }
+        .command-card:nth-child(2) .card-icon { color: #FF4D4D; }
+        .command-card:nth-child(2) .cmd-trigger { border-left-color: #FF4D4D; }
+
+        .command-card:nth-child(3) .card-header { border-color: #27C93F; }
+        .command-card:nth-child(3) .card-icon { color: #27C93F; }
+        .command-card:nth-child(3) .cmd-trigger { border-left-color: #27C93F; }
+
+        .command-card:nth-child(4) .card-header { border-color: #FFBD2E; }
+        .command-card:nth-child(4) .card-icon { color: #FFBD2E; }
+        .command-card:nth-child(4) .cmd-trigger { border-left-color: #FFBD2E; }
+
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Grid Lines -->
+        <div class="grid-line grid-v-1"></div>
+
+        <!-- Left Content -->
+        <div class="content-left">
+            <h1>Quick Start<br>Guide</h1>
+            <p class="subtitle">Transform your development workflow immediately by using the right triggers.</p>
+            
+            <div class="action-box">
+                <div class="action-label">Core Principle</div>
+                <p class="action-text">Simply state your need clearly, and the AI will guide you through the appropriate framework (TCRIE, RSTI, GRPCI).</p>
+            </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="content-right">
+            <div class="section-header">
+                <i class="fas fa-terminal"></i> Command Reference
+            </div>
+
+            <div class="command-grid">
+                <!-- Card 1: Project Init -->
+                <div class="command-card">
+                    <div class="card-header">
+                        <i class="fas fa-rocket card-icon"></i>
+                        <div class="card-title">Project Initialization</div>
+                    </div>
+                    <div class="cmd-list">
+                        <div class="cmd-item">
+                            <div class="cmd-trigger">"I'm starting a new project"</div>
+                            <div class="cmd-desc">→ Triggers TCRIE framework guidance</div>
+                        </div>
+                        <div class="cmd-item">
+                            <div class="cmd-trigger">"Create a PRD for [idea]"</div>
+                            <div class="cmd-desc">→ Generates requirements doc</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Dev Assist -->
+                <div class="command-card">
+                    <div class="card-header">
+                        <i class="fas fa-bug card-icon"></i>
+                        <div class="card-title">Dev Assistance</div>
+                    </div>
+                    <div class="cmd-list">
+                        <div class="cmd-item">
+                            <div class="cmd-trigger">"My prompts aren't working"</div>
+                            <div class="cmd-desc">→ Activates RSTI optimization</div>
+                        </div>
+                        <div class="cmd-item">
+                            <div class="cmd-trigger">"Help me debug [error]"</div>
+                            <div class="cmd-desc">→ Systematic diagnosis</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Learning -->
+                <div class="command-card">
+                    <div class="card-header">
+                        <i class="fas fa-graduation-cap card-icon"></i>
+                        <div class="card-title">Learning & Growth</div>
+                    </div>
+                    <div class="cmd-list">
+                        <div class="cmd-item">
+                            <div class="cmd-trigger">"Apply GRPCI to [topic]"</div>
+                            <div class="cmd-desc">→ Creates structured learning plan</div>
+                        </div>
+                        <div class="cmd-item">
+                            <div class="cmd-trigger">"Think through [task] (4 levels)"</div>
+                            <div class="cmd-desc">→ Deep problem analysis</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Career -->
+                <div class="command-card">
+                    <div class="card-header">
+                        <i class="fas fa-chart-line card-icon"></i>
+                        <div class="card-title">Career Development</div>
+                    </div>
+                    <div class="cmd-list">
+                        <div class="cmd-item">
+                            <div class="cmd-trigger">"Identify MVP features for..."</div>
+                            <div class="cmd-desc">→ Start Small Strategy</div>
+                        </div>
+                        <div class="cmd-item">
+                            <div class="cmd-trigger">"Build context prompt for..."</div>
+                            <div class="cmd-desc">→ Context optimization checklist</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

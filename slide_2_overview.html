@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Development Command Center Overview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #F5F5F5; color: #1A1A1A; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px; /* keep as required */
+            background-color: #F5F5F5;
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 65% 35%;
+            grid-template-rows: 1fr;
+        }
+
+        /* Grid Lines */
+        .grid-line { position: absolute; background-color: rgba(0, 0, 0, 0.05); z-index: 0; }
+        .grid-v-1 { width: 1px; height: 100%; left: 65%; top: 0; }
+        .grid-h-1 { height: 1px; width: 100%; top: 100px; left: 0; }
+
+        /* Left Content */
+        .content-left {
+            padding: 60px 40px 40px 80px; /* reduced right & bottom padding */
+            display: flex;
+            flex-direction: column;
+            z-index: 1;
+        }
+
+        .header-section {
+            margin-bottom: 24px; /* reduced spacing to pull grid up */
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: #1A1A1A;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .intro-text {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #555;
+            max-width: 85%;
+        }
+
+        /* Framework Grid - refreshed layout to one row */
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* single row to save vertical space */
+            gap: 18px;
+            margin-top: 12px;
+        }
+
+        .framework-card {
+            border: 1px solid #ddd;
+            background-color: white;
+            padding: 18px; /* slightly reduced */
+            display: flex;
+            flex-direction: column;
+            /* remove forced height so cards size naturally */
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            gap: 12px;
+        }
+
+        .icon-box {
+            width: 40px;
+            height: 40px;
+            background-color: #0052CC;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1A1A1A;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            line-height: 1.4;
+            color: #666;
+        }
+
+        .metric {
+            margin-top: 12px;
+            padding-top: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #0052CC;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Right Content */
+        .content-right {
+            background-color: #E5E5E5;
+            padding: 60px 30px; /* reduced side padding */
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* stack tightly */
+            align-items: stretch;
+            border-left: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .image-container {
+            width: 100%;
+            height: 220px; /* reduced to save vertical space */
+            background: white;
+            border: 1px solid rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .dashboard-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .stats-box {
+            background-color: #1A1A1A;
+            color: white;
+            padding: 20px; /* reduced padding */
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding-bottom: 6px;
+        }
+
+        .stat-label { font-size: 14px; color: #aaa; }
+        .stat-value { font-size: 14px; font-weight: 600; color: #fff; }
+        
+        .system-status {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #0052CC; /* Blue for active status */
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Grid Lines -->
+        <div class="grid-line grid-v-1"></div>
+        <div class="grid-line grid-h-1"></div>
+
+        <!-- Left Content -->
+        <div class="content-left">
+            <div class="header-section">
+                <h1>AI Development<br>Command Center</h1>
+                <p class="intro-text">A structured ecosystem integrating four core frameworks to accelerate development velocity by up to 40% while maintaining code quality.</p>
+            </div>
+
+            <div class="framework-grid">
+                <!-- Card 1 -->
+                <div class="framework-card">
+                    <div class="card-header">
+                        <div class="icon-box"><i class="fas fa-project-diagram"></i></div>
+                        <div class="card-title">TCRIE Framework</div>
+                    </div>
+                    <p class="card-desc">Systematic approach for project initialization, task definition, and iterative execution cycles.</p>
+                    <div class="metric">Status: Active</div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="framework-card">
+                    <div class="card-header">
+                        <div class="icon-box"><i class="fas fa-terminal"></i></div>
+                        <div class="card-title">RSTI Method</div>
+                    </div>
+                    <p class="card-desc">Prompt engineering optimization to improve AI response quality and reduce ambiguity.</p>
+                    <div class="metric">Efficiency: +60%</div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="framework-card">
+                    <div class="card-header">
+                        <div class="icon-box"><i class="fas fa-brain"></i></div>
+                        <div class="card-title">Thinking Framework</div>
+                    </div>
+                    <p class="card-desc">Four-level cognitive process guiding developers from logical definition to procedural excellence.</p>
+                    <div class="metric">Depth: 4 Levels</div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="framework-card">
+                    <div class="card-header">
+                        <div class="icon-box"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="card-title">5-Step Mastery</div>
+                    </div>
+                    <p class="card-desc">Data-driven learning method (GRPCI) to accelerate skill acquisition and retention.</p>
+                    <div class="metric">Speed: +30%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="content-right">
+            <div class="system-status">System Visualization</div>
+            <div class="image-container">
+                <img src="/home/ubuntu/upload/search_images/amWTaMGr4wTN.jpg" alt="Command Center Dashboard" class="dashboard-img">
+            </div>
+
+            <div class="stats-box">
+                <div class="system-status" style="color: #4CAF50;">● System Online</div>
+                <div class="stat-row">
+                    <span class="stat-label">Workflow Integration</span>
+                    <span class="stat-value">100%</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Frameworks Loaded</span>
+                    <span class="stat-value">4/4</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Dev Velocity</span>
+                    <span class="stat-value">High</span>
+                </div>
+                <div class="stat-row" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+                    <span class="stat-label">Code Quality</span>
+                    <span class="stat-value">Optimized</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

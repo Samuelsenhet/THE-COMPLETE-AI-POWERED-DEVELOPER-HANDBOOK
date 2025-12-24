@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-Based Learning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #F5F5F5; color: #1A1A1A; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #F5F5F5;
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 40% 60%;
+        }
+
+        /* Grid Lines */
+        .grid-line { position: absolute; background-color: rgba(0, 0, 0, 0.05); z-index: 0; }
+        .grid-v-1 { width: 1px; height: 100%; left: 40%; top: 0; }
+        .grid-h-1 { height: 1px; width: 100%; top: 100px; left: 0; }
+
+        /* Left Column: Strategy */
+        .col-left {
+            padding: 60px 40px;
+            background-color: #1A1A1A;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .header-section { margin-bottom: 30px; }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+            color: white;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #888;
+            font-weight: 300;
+        }
+
+        .strategy-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .strategy-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0052CC;
+            line-height: 1;
+        }
+
+        .step-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .step-content p {
+            font-size: 14px;
+            color: #aaa;
+            line-height: 1.4;
+        }
+
+        /* Right Column: Types & PRD */
+        .col-right {
+            padding: 40px 60px 20px 60px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-header {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1A1A1A;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .section-header i { color: #0052CC; }
+
+        .project-types-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .type-card {
+            border: 1px solid #ddd;
+            padding: 16px;
+            background: white;
+        }
+
+        .type-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1A1A1A;
+        }
+
+        .type-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .prd-box {
+            background-color: #E5E5E5;
+            padding: 18px;
+            border-left: 4px solid #FF4D4D;
+        }
+
+        .prd-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+
+        .prd-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .prd-item i {
+            color: #FF4D4D;
+            font-size: 12px;
+        }
+
+        /* Prompt Bar */
+        .prompt-bar {
+            margin-top: 12px;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .prompt-label {
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #0052CC;
+            white-space: nowrap;
+        }
+
+        .prompt-text {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Grid Lines -->
+        <div class="grid-line grid-v-1"></div>
+
+        <!-- Left Column -->
+        <div class="col-left">
+            <div class="header-section">
+                <h1>Project-Based<br>Learning</h1>
+                <p class="subtitle">Build real-world applications from MVP to production.</p>
+            </div>
+
+            <div class="strategy-list">
+                <div style="margin-bottom: 12px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #888;">Start Small Strategy</div>
+                
+                <div class="strategy-item">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Identify MVP Features</h3>
+                        <p>Determine minimum features required for core functionality.</p>
+                    </div>
+                </div>
+
+                <div class="strategy-item">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Implement Core</h3>
+                        <p>Build the essential functionality first with focus on quality.</p>
+                    </div>
+                </div>
+
+                <div class="strategy-item">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Iterate Incrementally</h3>
+                        <p>Add features one by one based on feedback and testing.</p>
+                    </div>
+                </div>
+
+                <div class="strategy-item">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Score Progress</h3>
+                        <p>Evaluate completion with measurable metrics (e.g., score out of 100).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-right">
+            <!-- Project Types -->
+            <div class="section-header">
+                <i class="fas fa-layer-group"></i>
+                <span>Project Progression System</span>
+            </div>
+
+            <div class="project-types-grid">
+                <div class="type-card">
+                    <div class="type-title">Data Engineering</div>
+                    <div class="type-desc">ETL pipelines, data processing, and analytics systems.</div>
+                </div>
+                <div class="type-card">
+                    <div class="type-title">ML Pipelines</div>
+                    <div class="type-desc">Model training, deployment, and monitoring workflows.</div>
+                </div>
+                <div class="type-card">
+                    <div class="type-title">Full-Stack Apps</div>
+                    <div class="type-desc">Authentication, databases, and external API integration.</div>
+                </div>
+                <div class="type-card">
+                    <div class="type-title">Complex Systems</div>
+                    <div class="type-desc">Microservices architecture, scalability, and optimization.</div>
+                </div>
+            </div>
+
+            <!-- PRD Framework -->
+            <div class="section-header">
+                <i class="fas fa-file-alt"></i>
+                <span>PRD Creation Framework</span>
+            </div>
+
+            <div class="prd-box">
+                <ul class="prd-list">
+                    <li class="prd-item"><i class="fas fa-chevron-right"></i> What is the project/app?</li>
+                    <li class="prd-item"><i class="fas fa-chevron-right"></i> How do I use the project/app?</li>
+                    <li class="prd-item"><i class="fas fa-chevron-right"></i> What are the patterns behind it?</li>
+                    <li class="prd-item"><i class="fas fa-chevron-right"></i> How to maximize utility for target audience?</li>
+                </ul>
+            </div>
+
+            <div class="prompt-bar">
+                <div class="prompt-label">MVP Prompt</div>
+                <div class="prompt-text">"Help me identify MVP features for my fitness tracking app"</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

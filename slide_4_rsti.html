@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSTI Method</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #F5F5F5; color: #1A1A1A; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #F5F5F5;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 80px;
+        }
+
+        /* Grid Lines */
+        .grid-line { position: absolute; background-color: rgba(0, 0, 0, 0.05); z-index: 0; }
+        .grid-v-1 { width: 1px; height: 100%; left: 25%; top: 0; }
+        .grid-v-2 { width: 1px; height: 100%; left: 50%; top: 0; }
+        .grid-v-3 { width: 1px; height: 100%; left: 75%; top: 0; }
+        .grid-h-1 { height: 1px; width: 100%; top: 220px; left: 0; }
+        .grid-h-2 { height: 1px; width: 100%; bottom: 120px; left: 0; }
+
+        /* Header */
+        .header {
+            margin-bottom: 60px;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .title-group h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: #1A1A1A;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .title-group h2 {
+            font-size: 24px;
+            font-weight: 400;
+            color: #555;
+        }
+
+        .mnemonic-display {
+            text-align: right;
+        }
+
+        .mnemonic-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .mnemonic-phrase {
+            font-size: 20px;
+            font-weight: 600;
+            color: #FF4D4D; /* Red Accent */
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Main Grid */
+        .rsti-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            flex-grow: 1;
+            z-index: 1;
+        }
+
+        .rsti-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .big-letter {
+            font-size: 80px;
+            font-weight: 800;
+            color: #FF4D4D;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .col-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin-bottom: 16px;
+            border-bottom: 2px solid #1A1A1A;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .col-desc {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #444;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            z-index: 1;
+            align-items: center;
+        }
+
+        .impact-box {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .impact-val {
+            font-size: 48px;
+            font-weight: 800;
+            color: #0052CC;
+        }
+
+        .impact-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            line-height: 1.2;
+        }
+
+        .prompt-terminal {
+            background-color: #1A1A1A;
+            color: #00FF00;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            border-left: 4px solid #FF4D4D;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .prompt-label {
+            color: #888;
+            text-transform: uppercase;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Grid Lines -->
+        <div class="grid-line grid-v-1"></div>
+        <div class="grid-line grid-v-2"></div>
+        <div class="grid-line grid-v-3"></div>
+        <div class="grid-line grid-h-1"></div>
+        <div class="grid-line grid-h-2"></div>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="title-group">
+                <h1>RSTI Method</h1>
+                <h2>Optimize Your AI Prompts</h2>
+            </div>
+            <div class="mnemonic-display">
+                <div class="mnemonic-label">Mnemonic Device</div>
+                <div class="mnemonic-phrase">Ramen Saves Tragic Idiots</div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="rsti-grid">
+            <!-- R -->
+            <div class="rsti-col">
+                <div class="big-letter">R</div>
+                <div class="col-title">Revisit</div>
+                <div class="col-desc">Return to the original framework (TCRIE/GRPCI). Ensure alignment with core principles before proceeding.</div>
+            </div>
+
+            <!-- S -->
+            <div class="rsti-col">
+                <div class="big-letter">S</div>
+                <div class="col-title">Separate</div>
+                <div class="col-desc">Break down complex, run-on prompts into shorter, clearer sentences. Reduce ambiguity for the model.</div>
+            </div>
+
+            <!-- T -->
+            <div class="rsti-col">
+                <div class="big-letter">T</div>
+                <div class="col-title">Try</div>
+                <div class="col-desc">Experiment with different phrasing, word choices, and structural approaches to find what resonates.</div>
+            </div>
+
+            <!-- I -->
+            <div class="rsti-col">
+                <div class="big-letter">I</div>
+                <div class="col-title">Introduce</div>
+                <div class="col-desc">Add strategic constraints to focus the response. Narrow the solution space for better relevance.</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="impact-box">
+                <div class="impact-val">80%</div>
+                <div class="impact-text">Improvement in<br>Response Quality</div>
+            </div>
+            <div class="prompt-terminal">
+                <span class="prompt-label">Fix Prompt:</span>
+                <span>"My prompt isn't working: [paste your prompt]"</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

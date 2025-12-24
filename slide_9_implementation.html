@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Implementation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #F5F5F5; color: #1A1A1A; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #F5F5F5;
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 65% 35%;
+        }
+
+        /* Grid Lines */
+        .grid-line { position: absolute; background-color: rgba(0, 0, 0, 0.05); z-index: 0; }
+        .grid-v-1 { width: 1px; height: 100%; left: 65%; top: 0; }
+        .grid-h-1 { height: 1px; width: 100%; top: 100px; left: 0; }
+
+        /* Left Content */
+        /* keep top padding (title spacing) intact */
+        .content-left {
+            padding: 60px 40px 12px 40px; /* reduced bottom and sides to save vertical space */
+            display: flex;
+            flex-direction: column;
+            z-index: 1;
+        }
+
+        .header-section { margin-bottom: 16px; } /* reduced spacing under title */
+
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: #1A1A1A;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            font-weight: 400;
+        }
+
+        /* Git Terminal */
+        .terminal-box {
+            background-color: #1A1A1A;
+            border-radius: 4px;
+            padding: 12px; /* reduced padding */
+            font-family: 'Courier New', monospace;
+            color: #ddd;
+            margin-bottom: 8px; /* reduced gap */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .terminal-header {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 6px;
+        }
+
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        .dot.red { background-color: #FF5F56; }
+        .dot.yellow { background-color: #FFBD2E; }
+        .dot.green { background-color: #27C93F; }
+        .term-title { margin-left: 10px; font-size: 12px; color: #888; }
+
+        .code-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px; /* smaller gap */
+            font-size: 13px;
+        }
+
+        .cmd { color: #27C93F; font-weight: 700; }
+        .comment { color: #666; }
+
+        /* Debugging Process */
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0052CC;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .debug-steps {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px; /* reduced vertical/horizontal gap */
+            margin-bottom: 18px; /* reduced */
+        }
+
+        .debug-step {
+            border: 1px solid #ddd;
+            background: white;
+            padding: 10px; /* reduced padding */
+        }
+
+        .step-num {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0052CC;
+            margin-bottom: 8px;
+        }
+
+        .step-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .step-desc {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.3;
+        }
+
+        /* Context Checklist */
+        .checklist-box {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 12px; /* reduced padding */
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .check-item i { color: #27C93F; font-size: 12px; }
+
+        /* Prompt Bar */
+        .prompt-bar {
+            margin-top: auto;
+            background-color: #E5E5E5;
+            padding: 10px 16px; /* slightly reduced */
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 4px solid #FF4D4D;
+        }
+
+        .prompt-label {
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #1A1A1A;
+        }
+
+        .prompt-text {
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: #333;
+        }
+
+        /* Right Content */
+        .content-right {
+            background-color: #E5E5E5;
+            padding: 16px; /* reduced to save vertical space */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-left: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .flowchart-container {
+            width: 100%;
+            height: 100%;
+            background: white;
+            padding: 6px; /* reduced */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flowchart-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Grid Lines -->
+        <div class="grid-line grid-v-1"></div>
+        <div class="grid-line grid-h-1"></div>
+
+        <!-- Left Content -->
+        <div class="content-left">
+            <div class="header-section">
+                <h1>Technical Implementation</h1>
+                <p class="subtitle">From Code to Production: Version Control, Debugging & Context</p>
+            </div>
+
+            <!-- Git Terminal -->
+            <div class="terminal-box">
+                <div class="terminal-header">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                    <div class="term-title">bash — git workflow</div>
+                </div>
+                <div class="code-grid">
+                    <div><span class="cmd">git init</span> <span class="comment"># Initialize repo</span></div>
+                    <div><span class="cmd">git commit -m "msg"</span> <span class="comment"># Save</span></div>
+                    <div><span class="cmd">git status</span> <span class="comment"># Check state</span></div>
+                    <div><span class="cmd">git log</span> <span class="comment"># View history</span></div>
+                    <div><span class="cmd">git add .</span> <span class="comment"># Stage changes</span></div>
+                    <div><span class="cmd">git push origin</span> <span class="comment"># Upload</span></div>
+                </div>
+            </div>
+
+            <!-- Debugging -->
+            <div class="section-title"><i class="fas fa-bug"></i> Debugging Methodology</div>
+            <div class="debug-steps">
+                <div class="debug-step">
+                    <div class="step-num">01</div>
+                    <div class="step-title">Identify</div>
+                    <div class="step-desc">Where is the problem? What exactly is failing?</div>
+                </div>
+                <div class="debug-step">
+                    <div class="step-num">02</div>
+                    <div class="step-title">Test</div>
+                    <div class="step-desc">Apply fixes incrementally. Test one variable at a time.</div>
+                </div>
+                <div class="debug-step">
+                    <div class="step-num">03</div>
+                    <div class="step-title">AI Assist</div>
+                    <div class="step-desc">Paste error logs. Let AI diagnose the root cause.</div>
+                </div>
+            </div>
+
+            <!-- Context Checklist -->
+            <div class="section-title"><i class="fas fa-clipboard-check"></i> Context Optimization</div>
+            <div class="checklist-box">
+                <div class="check-item"><i class="fas fa-check"></i> Project Objectives</div>
+                <div class="check-item"><i class="fas fa-check"></i> Current Errors/Blockers</div>
+                <div class="check-item"><i class="fas fa-check"></i> Dev Environment</div>
+                <div class="check-item"><i class="fas fa-check"></i> Visual References</div>
+            </div>
+
+            <div class="prompt-bar">
+                <div class="prompt-label">Debug Prompt</div>
+                <div class="prompt-text">"Debug this error: [paste error message]"</div>
+            </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="content-right">
+            <div class="flowchart-container">
+                <img src="/home/ubuntu/upload/search_images/UhXsRnkUdyrD.png" alt="Development Workflow Flowchart" class="flowchart-img">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

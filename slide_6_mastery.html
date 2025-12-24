@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-Step Mastery Method (GRPCI)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #F5F5F5; color: #1A1A1A; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #F5F5F5;
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 40% 60%;
+        }
+
+        /* Grid Lines */
+        .grid-line { position: absolute; background-color: rgba(0, 0, 0, 0.05); z-index: 0; }
+        .grid-v-1 { width: 1px; height: 100%; left: 40%; top: 0; }
+        .grid-h-1 { height: 1px; width: 100%; top: 140px; left: 0; }
+
+        /* Left Content */
+        .content-left {
+            padding: 60px 40px 40px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: 1px solid rgba(0,0,0,0.05);
+            z-index: 1;
+        }
+
+        .header-section h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -2px;
+            color: #1A1A1A;
+            margin-bottom: 20px;
+        }
+
+        .header-section h2 {
+            font-size: 24px;
+            font-weight: 400;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .mnemonic-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mnemonic-item {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+        }
+
+        .m-letter {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0052CC;
+            width: 20px;
+        }
+
+        .m-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .m-desc {
+            font-size: 14px;
+            color: #666;
+            font-weight: 400;
+            margin-left: 10px;
+        }
+
+        /* Prompt Box */
+        .prompt-box {
+            background-color: #1A1A1A;
+            color: white;
+            padding: 24px;
+            margin-top: 40px;
+            border-left: 4px solid #FF4D4D;
+        }
+
+        .prompt-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #aaa;
+            margin-bottom: 8px;
+        }
+
+        .prompt-content {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        /* Right Content */
+        .content-right {
+            padding: 60px 60px 40px 60px;
+            display: flex;
+            flex-direction: column;
+            z-index: 1;
+        }
+
+        .chart-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #0052CC;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chart-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .chart-row {
+            display: grid;
+            grid-template-columns: 120px 1fr 60px;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .row-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            text-align: right;
+        }
+
+        .bar-track {
+            height: 32px;
+            background-color: #E5E5E5;
+            width: 100%;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+        }
+
+        .bar-fill.highlight { background-color: #0052CC; }
+        .bar-fill.accent { background-color: #FF4D4D; }
+
+        .row-value {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1A1A1A;
+        }
+
+        /* Comprehension Breakdown */
+        .breakdown-section {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 30px;
+        }
+
+        .breakdown-header {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1A1A1A;
+            border-bottom: 2px solid #0052CC;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .progression-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .prog-step {
+            position: relative;
+        }
+
+        .prog-num {
+            font-size: 12px;
+            color: #aaa;
+            margin-bottom: 5px;
+        }
+
+        .prog-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            line-height: 1.3;
+        }
+
+        .arrow-icon {
+            position: absolute;
+            right: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ddd;
+            font-size: 12px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Grid Lines -->
+        <div class="grid-line grid-v-1"></div>
+        <div class="grid-line grid-h-1"></div>
+
+        <!-- Left Content -->
+        <div class="content-left">
+            <div class="header-section">
+                <h1>5-Step<br>Mastery</h1>
+                <h2>Accelerate Learning with GRPCI</h2>
+            </div>
+
+            <div class="mnemonic-list">
+                <div class="mnemonic-item">
+                    <div class="m-letter">G</div>
+                    <div><span class="m-text">Goal</span><span class="m-desc">Define objective</span></div>
+                </div>
+                <div class="mnemonic-item">
+                    <div class="m-letter">R</div>
+                    <div><span class="m-text">Research</span><span class="m-desc">Identify resources</span></div>
+                </div>
+                <div class="mnemonic-item">
+                    <div class="m-letter">P</div>
+                    <div><span class="m-text">Priming</span><span class="m-desc">Subconscious prep</span></div>
+                </div>
+                <div class="mnemonic-item">
+                    <div class="m-letter">C</div>
+                    <div><span class="m-text">Comprehension</span><span class="m-desc">Deep learning</span></div>
+                </div>
+                <div class="mnemonic-item">
+                    <div class="m-letter">I</div>
+                    <div><span class="m-text">Implementation</span><span class="m-desc">Build & iterate</span></div>
+                </div>
+            </div>
+
+            <div class="prompt-box">
+                <div class="prompt-label">AI Prompt Strategy</div>
+                <div class="prompt-content">"Apply the GRPCI framework to learning React with TypeScript"</div>
+            </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="content-right">
+            <div class="chart-title">
+                <span>Time Allocation Strategy</span>
+                <span style="color: #666; font-weight: 400; font-size: 12px;">Total Efficiency: +30%</span>
+            </div>
+
+            <div class="chart-container">
+                <!-- Goal -->
+                <div class="chart-row">
+                    <div class="row-label">Goal</div>
+                    <div class="bar-track">
+                        <div class="bar-fill" style="width: 5%;"></div>
+                    </div>
+                    <div class="row-value">5%</div>
+                </div>
+
+                <!-- Research -->
+                <div class="chart-row">
+                    <div class="row-label">Research</div>
+                    <div class="bar-track">
+                        <div class="bar-fill" style="width: 10%;"></div>
+                    </div>
+                    <div class="row-value">10%</div>
+                </div>
+
+                <!-- Priming -->
+                <div class="chart-row">
+                    <div class="row-label">Priming</div>
+                    <div class="bar-track">
+                        <div class="bar-fill accent" style="width: 5%;"></div>
+                    </div>
+                    <div class="row-value">5%</div>
+                </div>
+
+                <!-- Comprehension -->
+                <div class="chart-row">
+                    <div class="row-label" style="color: #0052CC;">Comprehension</div>
+                    <div class="bar-track">
+                        <div class="bar-fill highlight" style="width: 60%;"></div>
+                    </div>
+                    <div class="row-value" style="color: #0052CC;">60%</div>
+                </div>
+
+                <!-- Implementation -->
+                <div class="chart-row">
+                    <div class="row-label">Implementation</div>
+                    <div class="bar-track">
+                        <div class="bar-fill" style="width: 20%;"></div>
+                    </div>
+                    <div class="row-value">20%</div>
+                </div>
+            </div>
+
+            <div class="breakdown-section">
+                <div class="breakdown-header">Comprehension Progression (The 60%)</div>
+                <div class="progression-steps">
+                    <div class="prog-step">
+                        <div class="prog-num">01</div>
+                        <div class="prog-title">Overview</div>
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </div>
+                    <div class="prog-step">
+                        <div class="prog-num">02</div>
+                        <div class="prog-title">General Concepts</div>
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </div>
+                    <div class="prog-step">
+                        <div class="prog-num">03</div>
+                        <div class="prog-title">Major Concepts</div>
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </div>
+                    <div class="prog-step">
+                        <div class="prog-num">04</div>
+                        <div class="prog-title">Full Examples</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

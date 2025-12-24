@@ -1,0 +1,108 @@
+{
+  "project_info": {
+    "title": "The Complete AI-Powered Developer Handbook",
+    "created": 1766534791.1260679,
+    "last_updated": 1766535148.6166008,
+    "total_slides": 12
+  },
+  "slides": {
+    "slide_1_cover": "edited",
+    "slide_2_overview": "edited",
+    "slide_3_tcrie": "edited",
+    "slide_4_rsti": "edited",
+    "slide_5_thinking": "edited",
+    "slide_6_mastery": "edited",
+    "slide_7_pathway": "edited",
+    "slide_8_projects": "edited",
+    "slide_9_implementation": "edited",
+    "slide_10_advanced_ai": "edited",
+    "slide_11_career": "edited",
+    "slide_12_quick_start": "edited"
+  },
+  "outline": [
+    {
+      "id": "slide_1_cover",
+      "title": "The Complete AI-Powered Developer Handbook",
+      "summary": "Cover slide introducing the interactive command center dashboard for AI-powered development.",
+      "image_plan": "/home/ubuntu/upload/search_images/7AoX4cPmWRhx.png; /home/ubuntu/upload/search_images/u8EiPEND7Sb9.png - The cover slide emphasizes an \"Interactive Command Center Dashboard.\" Images 1 and 2 are high-quality, professional-looking dashboards that visually represent this concept. Image 1 is a clean sales dashboard, and Image 2 includes an \"Ask AI\" chat feature, which is highly relevant to the AI-powered theme.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_2_overview",
+      "title": "AI Development Command Center Overview",
+      "summary": "Overview of the four essential frameworks: TCRIE, RSTI, Thinking Framework, and 5-Step Mastery Method.",
+      "image_plan": "/home/ubuntu/upload/search_images/amWTaMGr4wTN.jpg - Slide 2 is an overview of the \"AI Development Command Center\" and its structured frameworks. Image 3 is a clean, professional dashboard with various charts and data visualizations, fitting the \"Command Center\" theme and leaving the more specific AI-focused dashboards for later.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_3_tcrie",
+      "title": "TCRIE Framework - Your Project Foundation",
+      "summary": "Detailed explanation of the TCRIE framework (Task, Context, Resources, Iterate, Evaluate) for project management.",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_4_rsti",
+      "title": "RSTI Method - Optimize Your AI Prompts",
+      "summary": "Guide to the RSTI method (Revisit, Separate, Try, Introduce) for optimizing AI prompts.",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_5_thinking",
+      "title": "The Thinking Framework - Four Levels of Problem Solving",
+      "summary": "Breakdown of the four levels of thinking: Logical, Analytical, Computational, and Procedural.",
+      "image_plan": "/home/ubuntu/upload/search_images/BR6TSJKoQBT6.png - This slide describes the \"Thinking Framework\" for problem-solving, moving from Logical to Procedural excellence. Image 7, \"The Software Engineering Landscape,\" shows a lightbulb graphic surrounded by concepts like Design, Development, Testing, and Skills Development, which visually represents a structured, comprehensive approach to engineering thought and process.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_6_mastery",
+      "title": "5-Step Mastery Method (GRPCI)",
+      "summary": "Explanation of the GRPCI framework (Goal, Research, Priming, Comprehension, Implementation) for learning acceleration.",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_7_pathway",
+      "title": "Complete Learning Pathway",
+      "summary": "Visual roadmap of the learning pathway from beginner to senior engineer, including tech stack progression.",
+      "image_plan": "/home/ubuntu/upload/search_images/zP2UCUpzShfM.png - Slide 7 describes the \"Complete Learning Pathway\" including the recommended Tech Stack and Deployment Platforms. Image 4, \"Modern Web Development Workflow,\" is a clear flowchart showing the entire development lifecycle from Git Repository to Web Browser, covering the tech stack and deployment aspects mentioned in the slide.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_8_projects",
+      "title": "Project-Based Learning",
+      "summary": "Strategy for project-based learning, from MVP to complex applications, using the Start Small Strategy.",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_9_implementation",
+      "title": "Technical Implementation",
+      "summary": "Best practices for version control, debugging methodology, and context optimization.",
+      "image_plan": "/home/ubuntu/upload/search_images/UhXsRnkUdyrD.png - Slide 9 covers Technical Implementation, specifically Version Control and Debugging Methodology. Image 5, titled \"Are You Ready to Commit?\", is a detailed flowchart illustrating a complex software development workflow, including steps like fixing bugs, running tests, and committing, which perfectly visualizes the debugging and version control process.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_10_advanced_ai",
+      "title": "Advanced AI Concepts",
+      "summary": "Overview of AI capabilities from Basic LLM to Agentic AI and integration tools.",
+      "image_plan": "/home/ubuntu/upload/search_images/QmgOpCkfSMv3.png - Slide 10 discusses \"Advanced AI Concepts\" and the evolution to \"Agentic AI.\" Image 6, \"Evolution of Code Generation Tools,\" explicitly mentions Generative AI and Code Automation Tools in the 2020s-Present, which directly relates to the advanced AI capabilities and agentic workflows described in the slide.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_11_career",
+      "title": "Interview & Career Acceleration",
+      "summary": "Strategies for technical interviewing, building standout projects, and tracking career progress.",
+      "image_plan": "/home/ubuntu/upload/search_images/sZSZtN01bbbS.jpg - Slide 11 focuses on \"Interview & Career Acceleration\" and the \"Path to Senior Engineer.\" Image 8, \"Full career ladder,\" is a clear visual representation of the career progression from Intern to Director, which is highly relevant to the slide's content.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_12_quick_start",
+      "title": "Your AI-Powered Development Journey Starts Now",
+      "summary": "Quick start guide with actionable commands to transform development workflow immediately.",
+      "image_plan": "",
+      "slide_template_key": ""
+    }
+  ]
+}

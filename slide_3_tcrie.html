@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCRIE Framework</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #F5F5F5; color: #1A1A1A; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #F5F5F5;
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 30% 70%;
+        }
+
+        /* Grid Lines */
+        .grid-line { position: absolute; background-color: rgba(0, 0, 0, 0.05); z-index: 0; }
+        .grid-v-1 { width: 1px; height: 100%; left: 30%; top: 0; }
+        .grid-h-1 { height: 1px; width: 100%; top: 120px; left: 0; }
+
+        /* Left Sidebar */
+        .sidebar {
+            background-color: #1A1A1A;
+            color: white;
+            padding: 60px 40px 20px 40px; /* keep top padding, reduce bottom */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* avoid large spaced gap that increased height */
+        }
+
+        .sidebar-header h1 {
+            font-size: 80px;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -4px;
+            color: #0052CC;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-header h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .mnemonic-box {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 20px; /* slightly reduced */
+            margin-top: 12px; /* keep it closer to header */
+        }
+
+        .mnemonic-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .mnemonic-text {
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1.4;
+            color: #ddd;
+        }
+
+        .mnemonic-highlight { color: #FF4D4D; font-weight: 600; }
+
+        /* Right Content */
+        .main-content {
+            padding: 60px 60px 30px 60px; /* keep top padding, reduce bottom */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #1A1A1A;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 11px; /* reduced from 20px to save height */
+        }
+
+        .step-row {
+            display: grid;
+            grid-template-columns: 60px 1fr 2fr;
+            align-items: center;
+            padding: 16px; /* reduced from 20px */
+            background-color: white;
+            border: 1px solid #ddd;
+        }
+
+        .step-letter {
+            font-size: 32px;
+            font-weight: 800;
+            color: #0052CC;
+        }
+
+        .step-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1A1A1A;
+        }
+
+        .step-desc {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* Prompt Bar */
+        .prompt-bar {
+            margin-top: auto;
+            background-color: #E5E5E5;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-left: 4px solid #0052CC;
+        }
+
+        .prompt-label {
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #1A1A1A;
+            white-space: nowrap;
+        }
+
+        .prompt-text {
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Grid Lines -->
+        <div class="grid-line grid-v-1"></div>
+
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>TCRIE</h1>
+                <h2>Project<br>Foundation</h2>
+            </div>
+            
+            <div class="mnemonic-box">
+                <div class="mnemonic-label">Mnemonic Device</div>
+                <p class="mnemonic-text">
+                    <span class="mnemonic-highlight">T</span>iny<br>
+                    <span class="mnemonic-highlight">C</span>rabs<br>
+                    <span class="mnemonic-highlight">R</span>ide<br>
+                    <span class="mnemonic-highlight">E</span>normous<br>
+                    <span class="mnemonic-highlight">I</span>guanas
+                </p>
+            </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="main-content">
+            <div class="section-title">The Complete Development Cycle</div>
+
+            <div class="steps-container">
+                <!-- Step T -->
+                <div class="step-row">
+                    <div class="step-letter">T</div>
+                    <div class="step-name">Task</div>
+                    <div class="step-desc">Define exact deliverables and success criteria. What specifically needs to be done?</div>
+                </div>
+
+                <!-- Step C -->
+                <div class="step-row">
+                    <div class="step-letter">C</div>
+                    <div class="step-name">Context</div>
+                    <div class="step-desc">Document constraints, environment, and stakeholders. Provide the background.</div>
+                </div>
+
+                <!-- Step R -->
+                <div class="step-row">
+                    <div class="step-letter">R</div>
+                    <div class="step-name">Resources</div>
+                    <div class="step-desc">List available tools, frameworks, APIs, and documentation to be leveraged.</div>
+                </div>
+
+                <!-- Step I -->
+                <div class="step-row">
+                    <div class="step-letter">I</div>
+                    <div class="step-name">Iterate</div>
+                    <div class="step-desc">Build incrementally with continuous testing cycles. Refine in loops.</div>
+                </div>
+
+                <!-- Step E -->
+                <div class="step-row">
+                    <div class="step-letter">E</div>
+                    <div class="step-name">Evaluate</div>
+                    <div class="step-desc">Measure outcomes against objectives. Assess results and identify improvements.</div>
+                </div>
+            </div>
+
+            <div class="prompt-bar">
+                <div class="prompt-label">Try This Prompt</div>
+                <div class="prompt-text">"Apply TCRIE to my e-commerce platform project"</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
