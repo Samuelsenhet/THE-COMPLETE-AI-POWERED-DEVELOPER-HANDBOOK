@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #FFFFFF; 
+        font-family: 'Inter', sans-serif;
+        padding-top: 60px;
+        padding-left: 80px;
+        padding-right: 80px;
+        overflow: hidden;
+      }
+      .insight-heading {
+        font-size: 32px;
+        font-weight: 800;
+        color: #0055FF;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        letter-spacing: -1px;
+      }
+      h2 {
+        font-size: 48px;
+        font-weight: 800;
+        color: #000000;
+        line-height: 1.1;
+        margin-bottom: 60px;
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+      .grid-item {
+        border-top: 4px solid #000000;
+        padding-top: 20px;
+      }
+      .item-letter {
+        font-size: 32px;
+        font-weight: 800;
+        color: #0055FF;
+        margin-bottom: 10px;
+      }
+      .item-title {
+        font-size: 24px;
+        font-weight: 800;
+        color: #000000;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+      .item-desc {
+        font-size: 18px;
+        color: #333333;
+        line-height: 1.6;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="insight-heading">Systematic Debugging Eliminates Friction</div>
+        <h2>RSTI Method for Prompt Optimization</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="item-letter">R</div>
+                <div class="item-title">Revisit</div>
+                <div class="item-desc">Return to the core TCRIE framework. Ensure the task, context, and role are still accurately defined for the current iteration.</div>
+            </div>
+            <div class="grid-item">
+                <div class="item-letter">S</div>
+                <div class="item-title">Separate</div>
+                <div class="item-desc">Break complex requirements into smaller, atomic prompts. Isolation makes it easier to identify where the AI logic is failing.</div>
+            </div>
+            <div class="grid-item">
+                <div class="item-letter">T</div>
+                <div class="item-title">Try</div>
+                <div class="item-desc">Experiment with different phrasing and structural approaches. Sometimes a simple change in wording unlocks the desired output.</div>
+            </div>
+            <div class="grid-item">
+                <div class="item-letter">I</div>
+                <div class="item-title">Introduce</div>
+                <div class="item-desc">Add strategic constraints and specific negative prompts. Tell the AI exactly what to avoid to narrow down the solution space.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

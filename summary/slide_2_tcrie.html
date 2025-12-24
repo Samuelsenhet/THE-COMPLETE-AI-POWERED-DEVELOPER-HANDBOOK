@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .slide-container { 
+        width: 1280px; 
+        min-height: 720px; 
+        background: #FFFFFF; 
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        overflow: hidden;
+      }
+      .content-area {
+        flex: 1;
+        padding-top: 60px;
+        padding-left: 80px;
+      }
+      .image-area {
+        width: 500px;
+        padding-top: 60px;
+        padding-right: 80px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+      }
+      .insight-heading {
+        font-size: 32px;
+        font-weight: 800;
+        color: #0055FF;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        letter-spacing: -1px;
+      }
+      h2 {
+        font-size: 48px;
+        font-weight: 800;
+        color: #000000;
+        line-height: 1.1;
+        margin-bottom: 30px;
+      }
+      .framework-list {
+        list-style: none;
+      }
+      .framework-item {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: flex-start;
+      }
+      .framework-letter {
+        font-size: 24px;
+        font-weight: 800;
+        color: #0055FF;
+        width: 40px;
+        flex-shrink: 0;
+      }
+      .framework-text {
+        font-size: 20px;
+        color: #333333;
+        line-height: 1.4;
+      }
+      .framework-text strong {
+        color: #000000;
+      }
+      .stats-box {
+        margin-top: 40px;
+        border-top: 2px solid #000000;
+        padding-top: 20px;
+        display: flex;
+        gap: 40px;
+      }
+      .stat-item {
+        display: flex;
+        flex-direction: column;
+      }
+      .stat-value {
+        font-size: 48px;
+        font-weight: 800;
+        color: #000000;
+      }
+      .stat-label {
+        font-size: 14px;
+        color: #666666;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .dashboard-img {
+        width: 420px;
+        height: 500px;
+        object-fit: cover;
+        border: 1px solid #EEEEEE;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-area">
+            <div class="insight-heading">Structured Prompting is the Foundation</div>
+            <h2>The AI-First Mindset & TCRIE Framework</h2>
+            <div class="framework-list">
+                <div class="framework-item">
+                    <div class="framework-letter">T</div>
+                    <div class="framework-text"><strong>Task:</strong> Define the specific action required.</div>
+                </div>
+                <div class="framework-item">
+                    <div class="framework-letter">C</div>
+                    <div class="framework-text"><strong>Context:</strong> Provide the environment and constraints.</div>
+                </div>
+                <div class="framework-item">
+                    <div class="framework-letter">R</div>
+                    <div class="framework-text"><strong>Role:</strong> Assign a specific persona to the AI.</div>
+                </div>
+                <div class="framework-item">
+                    <div class="framework-letter">I</div>
+                    <div class="framework-text"><strong>Intent:</strong> Clarify the desired outcome and goal.</div>
+                </div>
+                <div class="framework-item">
+                    <div class="framework-letter">E</div>
+                    <div class="framework-text"><strong>Example:</strong> Show what success looks like.</div>
+                </div>
+            </div>
+            <div class="stats-box">
+                <div class="stat-item">
+                    <div class="stat-value">10X</div>
+                    <div class="stat-label">Productivity Gain</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Framework Adoption</div>
+                </div>
+            </div>
+        </div>
+        <div class="image-area">
+            <img src="/home/ubuntu/upload/search_images/amWTaMGr4wTN.jpg" class="dashboard-img" alt="Command Center">
+        </div>
+    </div>
+</body>
+</html>
